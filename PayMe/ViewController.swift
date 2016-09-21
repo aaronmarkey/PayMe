@@ -9,7 +9,23 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    //MARK: Properties
+    @IBOutlet weak var payRate: UITextField!
+    @IBOutlet weak var otRate: UITextField!
+    @IBOutlet weak var hoursWorked: UITextField!
+    @IBOutlet weak var taxRate: UITextField!
+    @IBOutlet weak var other: UITextField!
 
+    @IBOutlet weak var otRateResult: UILabel!
+    @IBOutlet weak var otHoursResult: UILabel!
+    @IBOutlet weak var grossResult: UILabel!
+    @IBOutlet weak var totalTaxesResult: UILabel!
+    @IBOutlet weak var netResult: UILabel!
+    
+    
+    @IBAction func calculateButton(sender: UIButton) {
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
