@@ -25,6 +25,17 @@ class ViewController: UIViewController {
     
     
     @IBAction func calculateButton(sender: UIButton) {
+        
+        //TODO: check optionals
+        let payRateValue = Float(payRate.text!)
+        let otRateValue = Float(otRate.text!)
+        let hoursWorkedValue = Int(hoursWorked.text!)
+        let taxRateValue = Float(taxRate.text!)! / 100
+        let otherValue = Float(other.text!)
+        
+        let results = calculateResults(payRateValue!, otRate: otRateValue!, hoursWorked: hoursWorkedValue!, taxRate: taxRateValue, other: otherValue!)
+        
+        displayResults(results, otRateResult: otRateResult, otHoursResult: otHoursResult, grossResult: grossResult, totalTaxesResult: totalTaxesResult, netResult: netResult)
     }
     
     

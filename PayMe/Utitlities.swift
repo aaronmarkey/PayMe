@@ -13,7 +13,7 @@ import UIKit
  
  - Parameter errorMessage: The message to show in the error.
  - Parameter view: The view to display this alert on top of.
- */
+*/
 func createAndDisplayErrorAlert(errorMessage: String, view: UIViewController) {
     
     //create alert conrtroller
@@ -61,7 +61,7 @@ func calculateResults(payRate: Float, otRate: Float, hoursWorked: Int, taxRate: 
     }
     
     //calculate gross pay
-    let gross = 40 * payRate + Float(otHours) * otRate
+    let gross = Float(hoursWorked) * payRate + Float(otHours) * otRate
     
     //calculate taxes
     let totalTax = gross * taxRate
@@ -88,4 +88,23 @@ func formatNumber(number: Float, style: NSNumberFormatterStyle) -> String! {
     return formatter.stringFromNumber(number)!
 }
 
+/**
+ Displays the results on the screen
+ 
+ - Parameter results: Tuple of the results from calculateResults()
+ - Parameters:
+    - otRateResults: Label for overtime rates
+    - otHoursResults: Label for overtime hours
+    - grossResult: Label for gross pay
+    - totalTaxResult: Label for taxes on gross pay
+    - netResult: Label for net pay
+*/
+func displayResults(results: (otRate: Float, otHours: Int, gross: Float, totalTax: Float, net: Float), otRateResult: UILabel, otHoursResult: UILabel, grossResult: UILabel, totalTaxesResult: UILabel, netResult: UILabel) {
+    
+    otRateResult.text = formatNumber(results.otRate, style: .CurrencyStyle)
+    otHoursResult.text = String(results.otHours)
+    grossResult.text = formatNumber(results.gross, style: .CurrencyStyle)
+    totalTaxesResult.text = formatNumber(results.totalTax, style: .CurrencyStyle)
+    netResult.text = formatNumber(results.net, style: .CurrencyStyle)
+}
 
