@@ -129,6 +129,9 @@
                                 <rect key="frame" x="176" y="59" width="102" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="inputIsTyped:" destination="BYZ-38-t0r" eventType="valueChanged" id="LHx-vX-h6W"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1.5" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ddQ-Kd-x1l" userLabel="OTField">
                                 <rect key="frame" x="176" y="92" width="102" height="30"/>
