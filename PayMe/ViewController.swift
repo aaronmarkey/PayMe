@@ -26,7 +26,7 @@ class ViewController: UIViewController {
     
     @IBAction func calculateButton(sender: UIButton) {
         
-//        //create VF objects
+        //create VF objects
         let payCF = ValidateField<Float>(field: payRate, fieldDefault: "7.25", message: "Pay rate should be the amount made per hour and at least 0. Ex: 10.75, 21.00", fromView: self, type: Float())
         let otCF = ValidateField<Float>(field: otRate, fieldDefault: "1.5", message: "Overtime rate should be the number hourly pay is raise at and at least 0. Ex: 1.5, 1.75", fromView: self, type: Float())
         let hoursCF = ValidateField<Int>(field: hoursWorked, fieldDefault: "0", message: "Hours Worked should be a whole value and at least 0. Ex: 20, 33", fromView: self, type: Int())
