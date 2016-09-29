@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		937746281D9C17FE00261FC7 /* CheckField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937746271D9C17FE00261FC7 /* CheckField.swift */; };
+		937746281D9C17FE00261FC7 /* ValidateField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937746271D9C17FE00261FC7 /* ValidateField.swift */; };
 		93A8B01F1D92CD720002EEAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A8B01E1D92CD720002EEAD /* AppDelegate.swift */; };
 		93A8B0211D92CD720002EEAD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A8B0201D92CD720002EEAD /* ViewController.swift */; };
 		93A8B0241D92CD720002EEAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93A8B0221D92CD720002EEAD /* Main.storyboard */; };
@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		937746271D9C17FE00261FC7 /* CheckField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckField.swift; sourceTree = "<group>"; };
+		937746271D9C17FE00261FC7 /* ValidateField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidateField.swift; sourceTree = "<group>"; };
 		93A8B01B1D92CD720002EEAD /* PayMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93A8B01E1D92CD720002EEAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93A8B0201D92CD720002EEAD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -65,7 +65,7 @@
 				93A8B0271D92CD720002EEAD /* LaunchScreen.storyboard */,
 				93A8B02A1D92CD720002EEAD /* Info.plist */,
 				93A8B0301D92DBA10002EEAD /* Utitlities.swift */,
-				937746271D9C17FE00261FC7 /* CheckField.swift */,
+				937746271D9C17FE00261FC7 /* ValidateField.swift */,
 			);
 			path = PayMe;
 			sourceTree = "<group>";
@@ -143,7 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93A8B0211D92CD720002EEAD /* ViewController.swift in Sources */,
-				937746281D9C17FE00261FC7 /* CheckField.swift in Sources */,
+				937746281D9C17FE00261FC7 /* ValidateField.swift in Sources */,
 				93A8B0311D92DBA10002EEAD /* Utitlities.swift in Sources */,
 				93A8B01F1D92CD720002EEAD /* AppDelegate.swift in Sources */,
 			);

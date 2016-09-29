@@ -108,10 +108,24 @@ func displayResults(results: (otRate: Float, otHours: Int, gross: Float, totalTa
     netResult.text = formatNumber(results.net, style: .CurrencyStyle)
 }
 
-func conversionSuccessful<T>(value: T, text: UITextField) {
+/**
+ Changes text black if validation is successful
+ 
+ - Parameter text: The field of the text
+
+ */
+func conversionSuccessful(text: UITextField) {
     text.textColor = UIColor.blackColor()
 }
 
+/**
+ Changes red black if validation fails, throws up alert box
+ 
+ - Parameter message: The body of the error
+ - Parameter view: View to bind alert box to
+ - Parameter text: The field of the text
+ 
+ */
 func conversionFailure(message: String, view: UIViewController, text: UITextField) {
     createAndDisplayErrorAlert(message, view: view)
     text.textColor = UIColor.redColor()

@@ -22,62 +22,30 @@ class ViewController: UIViewController {
     @IBOutlet weak var grossResult: UILabel!
     @IBOutlet weak var totalTaxesResult: UILabel!
     @IBOutlet weak var netResult: UILabel!
-    
+
     
     @IBAction func calculateButton(sender: UIButton) {
         
+//        //create VF objects
+        let payCF = ValidateField<Float>(field: payRate, fieldDefault: "7.25", message: "Pay rate should be the amount made per hour and at least 0. Ex: 10.75, 21.00", fromView: self, type: Float())
+        let otCF = ValidateField<Float>(field: otRate, fieldDefault: "1.5", message: "Overtime rate should be the number hourly pay is raise at and at least 0. Ex: 1.5, 1.75", fromView: self, type: Float())
+        let hoursCF = ValidateField<Int>(field: hoursWorked, fieldDefault: "0", message: "Hours Worked should be a whole value and at least 0. Ex: 20, 33", fromView: self, type: Int())
+        let taxCF = ValidateField<Float>(field: taxRate, fieldDefault: "0.00", message: "Tax Rate should be some number and at least 0. Ex: 12, 8.25", fromView: self, type: Float())
+        let otherCF = ValidateField<Float>(field: other, fieldDefault: "0.00", message: "Other should be some dollar amount and at least 0. Ex: 10.75, 21.00", fromView: self, type: Float())
+        
         //some check flag
         var check = true
+        check = check ? payCF.check().check : check
+        check = check ? otCF.check().check : check
+        check = check ? hoursCF.check().check : check
+        check = check ? taxCF.check().check : check
+        check = check ? otherCF.check().check : check
         
-        //check payRate
-        var payRateValue: Float!
-        payRate.text = payRate.text!.isEmpty ? "7.25" : payRate.text
-        if let value = Float(payRate.text!) {
-            payRateValue = conversionSuccessful(value, text: payRate)
-        } else {
-            check = conversionFailure("Pay rate should be the amount made per hour. Ex: 10.75, 21.00", view: self, text: payRate)
-        }
-        
-        //check otRate
-        var otRateValue: Float!
-        otRate.text = otRate.text!.isEmpty ? "1.5" : otRate.text
-        if let value = Float(otRate.text!) {
-            otRateValue = conversionSuccessful(value, text: otRate)
-        } else {
-            check = conversionFailure("Overtime rate should be the number hourly pay is raise at. Ex: 1.5, 1.75", view: self, text: otRate)
-        }
-        
-        //check hoursWorked Field
-        var hoursWorkedValue: Int!
-        hoursWorked.text = hoursWorked.text!.isEmpty ? "0" : hoursWorked.text
-        if let value = Int(hoursWorked.text!) {
-            hoursWorkedValue = conversionSuccessful(value, text: hoursWorked)
-        } else {
-            check = conversionFailure("Hours Worked should be a whole value. Ex: 20, 33", view: self, text: hoursWorked)
-        }
-        
-        //check taxRate
-        var taxRateValue: Float!
-        taxRate.text = taxRate.text!.isEmpty ? "0.00" : taxRate.text
-        if let value = Float(taxRate.text!) {
-            taxRateValue = conversionSuccessful(value/100, text: taxRate)
-        } else {
-            check = conversionFailure("Tax Rate should be some number. Ex: 12, 8.25", view: self, text: taxRate)
-        }
-        
-        //check other
-        var otherValue: Float!
-        other.text = other.text!.isEmpty ? "0.00" : other.text
-        if let value = Float(other.text!) {
-            otherValue = conversionSuccessful(value, text: other)
-        } else {
-            check = conversionFailure("Other should be some dollar amount. Ex: 10.75, 21.00", view: self, text: other)
-        }
         
         //if check passes, calculate results
         if(check) {
-            let results = calculateResults(payRateValue!, otRate: otRateValue!, hoursWorked: hoursWorkedValue!, taxRate: taxRateValue, other: otherValue!)
-        
+            let results = calculateResults(payCF.check().float, otRate: otCF.check().float, hoursWorked: hoursCF.check().int, taxRate: taxCF.check().float, other: otherCF.check().float)
+            
             displayResults(results, otRateResult: otRateResult, otHoursResult: otHoursResult, grossResult: grossResult, totalTaxesResult: totalTaxesResult, netResult: netResult)
         }
     }
