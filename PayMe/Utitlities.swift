@@ -14,19 +14,19 @@ import UIKit
  - Parameter errorMessage: The message to show in the error.
  - Parameter view: The view to display this alert on top of.
 */
-func createAndDisplayErrorAlert(errorMessage: String, view: UIViewController) {
+func createAndDisplayErrorAlert(_ errorMessage: String, view: UIViewController) {
     
     //create alert conrtroller
-    let alertController = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .Alert)
+    let alertController = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
     
     //set cancel button title
-    let cancelButton = UIAlertAction(title: "OK", style: .Cancel, handler: nil)
+    let cancelButton = UIAlertAction(title: "OK", style: .cancel, handler: nil)
     
     //add button to alert controller
     alertController.addAction(cancelButton)
     
     //present the controller
-    view.presentViewController(alertController, animated: true, completion: nil)
+    view.present(alertController, animated: true, completion: nil)
 }
 
 
@@ -47,7 +47,7 @@ func createAndDisplayErrorAlert(errorMessage: String, view: UIViewController) {
     - totalTax: The amount of money taken from the paycheck due to taxes.
     - net: The amount the user's check will actually be.
 */
-func calculateResults(payRate: Float, otRate: Float, hoursWorked: Int, taxRate: Float, other: Float) -> (otRate: Float, otHours: Int, gross: Float, totalTax: Float, net: Float) {
+func calculateResults(_ payRate: Float, otRate: Float, hoursWorked: Int, taxRate: Float, other: Float) -> (otRate: Float, otHours: Int, gross: Float, totalTax: Float, net: Float) {
     
     //calculate overtime hourly rate
     let otRate = payRate * otRate
@@ -81,11 +81,11 @@ func calculateResults(payRate: Float, otRate: Float, hoursWorked: Int, taxRate: 
  
  - Returns: The formatted number as a String.
 */
-func formatNumber(number: Float, style: NSNumberFormatterStyle) -> String! {
-    let formatter = NSNumberFormatter()
+func formatNumber(_ number: Float, style: NumberFormatter.Style) -> String! {
+    let formatter = NumberFormatter()
     formatter.numberStyle = style
     
-    return formatter.stringFromNumber(number)!
+    return formatter.string(from: number as NSNumber)!
 }
 
 /**
@@ -99,13 +99,13 @@ func formatNumber(number: Float, style: NSNumberFormatterStyle) -> String! {
     - totalTaxResult: Label for taxes on gross pay
     - netResult: Label for net pay
 */
-func displayResults(results: (otRate: Float, otHours: Int, gross: Float, totalTax: Float, net: Float), otRateResult: UILabel, otHoursResult: UILabel, grossResult: UILabel, totalTaxesResult: UILabel, netResult: UILabel) {
+func displayResults(_ results: (otRate: Float, otHours: Int, gross: Float, totalTax: Float, net: Float), otRateResult: UILabel, otHoursResult: UILabel, grossResult: UILabel, totalTaxesResult: UILabel, netResult: UILabel) {
     
-    otRateResult.text = formatNumber(results.otRate, style: .CurrencyStyle)
+    otRateResult.text = formatNumber(results.otRate, style: .currency)
     otHoursResult.text = String(results.otHours)
-    grossResult.text = formatNumber(results.gross, style: .CurrencyStyle)
-    totalTaxesResult.text = formatNumber(results.totalTax, style: .CurrencyStyle)
-    netResult.text = formatNumber(results.net, style: .CurrencyStyle)
+    grossResult.text = formatNumber(results.gross, style: .currency)
+    totalTaxesResult.text = formatNumber(results.totalTax, style: .currency)
+    netResult.text = formatNumber(results.net, style: .currency)
 }
 
 /**
@@ -114,8 +114,8 @@ func displayResults(results: (otRate: Float, otHours: Int, gross: Float, totalTa
  - Parameter text: The field of the text
 
  */
-func conversionSuccessful(text: UITextField) {
-    text.textColor = UIColor.blackColor()
+func conversionSuccessful(_ text: UITextField) {
+    text.textColor = UIColor.black
 }
 
 /**
@@ -126,7 +126,7 @@ func conversionSuccessful(text: UITextField) {
  - Parameter text: The field of the text
  
  */
-func conversionFailure(message: String, view: UIViewController, text: UITextField) {
+func conversionFailure(_ message: String, view: UIViewController, text: UITextField) {
     createAndDisplayErrorAlert(message, view: view)
-    text.textColor = UIColor.redColor()
+    text.textColor = UIColor.red
 }

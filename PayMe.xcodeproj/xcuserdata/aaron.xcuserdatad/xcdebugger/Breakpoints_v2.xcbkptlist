@@ -16,7 +16,7 @@
             startingLineNumber = "30"
             endingLineNumber = "30"
             landmarkName = "createAndDisplayErrorAlert(_:view:)"
-            landmarkType = "7">
+            landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -32,7 +32,7 @@
             startingLineNumber = "56"
             endingLineNumber = "56"
             landmarkName = "calculateResults(_:otRate:hoursWorked:taxRate:other:)"
-            landmarkType = "7">
+            landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

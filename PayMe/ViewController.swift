@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var netResult: UILabel!
 
     
-    @IBAction func calculateButton(sender: UIButton) {
+    @IBAction func calculateButton(_ sender: UIButton) {
         
         //create VF objects
         let payCF = ValidateField<Float>(field: payRate, fieldDefault: "7.25", message: "Pay rate should be the amount made per hour and at least 0. Ex: 10.75, 21.00", fromView: self, type: Float())
@@ -62,11 +62,11 @@ class ViewController: UIViewController {
     
     
     //MARK: UIResponder functions
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
     
-    func textFieldShouldReturn(textField: UITextView) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextView) -> Bool {
         textField.resignFirstResponder();
         return true
     }
