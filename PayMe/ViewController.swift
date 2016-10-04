@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         let payCF = ValidateField<Float>(field: payRate, fieldDefault: "7.25", message: "Pay rate should be the amount made per hour and at least 0. Ex: 10.75, 21.00", fromView: self, type: Float())
         let otCF = ValidateField<Float>(field: otRate, fieldDefault: "1.5", message: "Overtime rate should be the number hourly pay is raise at and at least 0. Ex: 1.5, 1.75", fromView: self, type: Float())
         let hoursCF = ValidateField<Int>(field: hoursWorked, fieldDefault: "0", message: "Hours Worked should be a whole value and at least 0. Ex: 20, 33", fromView: self, type: Int())
-        let taxCF = ValidateField<Float>(field: taxRate, fieldDefault: "0.00", message: "Tax Rate should be some number and at least 0. Ex: 12, 8.25", fromView: self, type: Float())
+        let taxCF = ValidateField<Float>(field: taxRate, fieldDefault: "12.00", message: "Tax Rate should be some number and at least 0. Ex: 12, 8.25", fromView: self, type: Float())
         let otherCF = ValidateField<Float>(field: other, fieldDefault: "0.00", message: "Other should be some dollar amount and at least 0. Ex: 10.75, 21.00", fromView: self, type: Float())
         
         //some check flag

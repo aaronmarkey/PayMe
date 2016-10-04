@@ -61,10 +61,10 @@ func calculateResults(payRate: Float, otRate: Float, hoursWorked: Int, taxRate: 
     }
     
     //calculate gross pay
-    let gross = Float(hoursWorked) * payRate + Float(otHours) * otRate
+    let gross = ((Float(hoursWorked) - Float(otHours)) * payRate) + (Float(otHours) * otRate * payRate)
     
     //calculate taxes
-    let totalTax = gross * taxRate
+    let totalTax = gross * (taxRate/100)
     
     //calculate net pay
     let net = gross - totalTax - other
