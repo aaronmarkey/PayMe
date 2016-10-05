@@ -50,7 +50,13 @@ class ViewController: UIViewController {
         }
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        otRateResult.text = ""
+        otHoursResult.text = ""
+        grossResult.text = ""
+        totalTaxesResult.text = ""
+        netResult.text = ""
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
     }

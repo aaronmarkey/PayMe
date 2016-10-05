@@ -6,4 +6,4 @@ It is currently using Swift 3.0.
 
 To see more by Aaron Markey, see [GitHub](https://github.com/cubebuddha).
 
-![PayMe Screenshot](http://i.imgur.com/HvvWEB9.png)
+![PayMe Screenshot](http://i.imgur.com/aFRAWcE.png)
