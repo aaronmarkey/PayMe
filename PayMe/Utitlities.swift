@@ -50,7 +50,7 @@ func createAndDisplayErrorAlert(_ errorMessage: String, view: UIViewController) 
 func calculateResults(_ payRate: Float, otRate: Float, hoursWorked: Int, taxRate: Float, other: Float) -> (otRate: Float, otHours: Int, gross: Float, totalTax: Float, net: Float) {
     
     //calculate overtime hourly rate
-    let otRate = payRate * otRate
+    let otPay = payRate * otRate
     
     //calculate number of OT hours worked
     let otHours: Int;
@@ -61,7 +61,7 @@ func calculateResults(_ payRate: Float, otRate: Float, hoursWorked: Int, taxRate
     }
     
     //calculate gross pay
-    let gross = ((Float(hoursWorked) - Float(otHours)) * payRate) + (Float(otHours) * otRate * payRate)
+    let gross = ((Float(hoursWorked) - Float(otHours)) * payRate) + (Float(otHours) * otPay)
     
     //calculate taxes
     let totalTax = gross * (taxRate/100)
