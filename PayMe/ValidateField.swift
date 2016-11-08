@@ -38,7 +38,6 @@ struct ValidateField<T> {
              so is now returning tuples until I can get working. This is a damn disaster.
      */
     func check() -> (check: Bool, float: Float, int: Int) {
-        print("check")
         let text = getField.text!.isEmpty ? "0" : getField.text!
         if finalType is Float {
             if let v = Float(text) {
