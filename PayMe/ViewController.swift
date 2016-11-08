@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: Properties
     @IBOutlet weak var payRate: UITextField!
@@ -17,11 +17,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var taxRate: UITextField!
     @IBOutlet weak var other: UITextField!
 
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var otRateResult: UILabel!
     @IBOutlet weak var otHoursResult: UILabel!
     @IBOutlet weak var grossResult: UILabel!
     @IBOutlet weak var totalTaxesResult: UILabel!
     @IBOutlet weak var netResult: UILabel!
+    
+    //MARK: Actions
+    @IBAction func userTappedBackground(sender: AnyObject) {
+        view.endEditing(true)
+    }
 
     
     @IBAction func calculateButton(_ sender: UIButton) {
@@ -69,12 +75,7 @@ class ViewController: UIViewController {
     
     //MARK: UIResponder functions
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextView) -> Bool {
-        textField.resignFirstResponder();
-        return true
+        self.scrollView.touchesBegan(touches, with: event)
     }
 }
 

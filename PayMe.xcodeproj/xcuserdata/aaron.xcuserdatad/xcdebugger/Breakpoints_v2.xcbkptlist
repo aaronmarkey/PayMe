@@ -35,5 +35,83 @@
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PayMe/ScrollView.swift"
+            timestampString = "500254983.195082"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "10"
+            endingLineNumber = "10"
+            landmarkName = "ScrollView"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PayMe.ScrollView.init (frame : __C.CGRect) -&gt; PayMe.ScrollView"
+                  moduleName = "PayMe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aaron/projects/PayMe/PayMe/ScrollView.swift"
+                  timestampString = "500255089.601479"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "210">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PayMe.ScrollView.__allocating_init (frame : __C.CGRect) -&gt; PayMe.ScrollView"
+                  moduleName = "PayMe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aaron/projects/PayMe/PayMe/ScrollView.swift"
+                  timestampString = "500255089.604884"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "27">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PayMe.ScrollView.__allocating_init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;PayMe.ScrollView&gt;"
+                  moduleName = "PayMe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aaron/projects/PayMe/PayMe/ScrollView.swift"
+                  timestampString = "500255089.609219"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PayMe.ScrollView.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;PayMe.ScrollView&gt;"
+                  moduleName = "PayMe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aaron/projects/PayMe/PayMe/ScrollView.swift"
+                  timestampString = "500255089.61338"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "105">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

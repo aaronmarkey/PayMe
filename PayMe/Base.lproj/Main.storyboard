@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="miF-49-M93">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="miF-49-M93" customClass="ScrollView" customModule="PayMe" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="68" width="414" height="668"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Your Week" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ApU-eb-VWf">
@@ -323,6 +323,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="miF-49-M93" secondAttribute="trailing" constant="-20" id="gak-E6-qK2"/>
                             <constraint firstItem="miF-49-M93" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="48" id="rUR-0l-wyJ"/>
                         </constraints>
+                        <connections>
+                            <action selector="userTappedBackgroundWithSender:" destination="BYZ-38-t0r" eventType="touchDown" id="VqF-rZ-cj2"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="grossResult" destination="Lnu-KF-QzK" id="QjL-JH-7v0"/>
@@ -333,6 +336,7 @@
                         <outlet property="otRateResult" destination="tdH-jZ-Nds" id="D4i-af-ToB"/>
                         <outlet property="other" destination="g0b-bP-BB1" id="4bO-lJ-PQ2"/>
                         <outlet property="payRate" destination="q7C-Id-QKA" id="5ky-g7-ywY"/>
+                        <outlet property="scrollView" destination="miF-49-M93" id="Gtq-b2-srl"/>
                         <outlet property="taxRate" destination="u77-qR-euB" id="9ta-2c-opp"/>
                         <outlet property="totalTaxesResult" destination="M9e-3O-Cep" id="nUY-Py-DN6"/>
                     </connections>
