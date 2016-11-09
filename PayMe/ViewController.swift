@@ -65,6 +65,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        payRate.addToolbarToKeyboard(view: self.view)
+        otRate.addToolbarToKeyboard(view: self.view)
+        hoursWorked.addToolbarToKeyboard(view: self.view)
+        taxRate.addToolbarToKeyboard(view: self.view)
+        other.addToolbarToKeyboard(view: self.view)
     }
     
 
@@ -79,3 +85,20 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
 }
 
+extension UITextField {
+    func addToolbarToKeyboard(view: UIView) {
+        let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 50))
+        toolbar.barStyle = UIBarStyle.default
+        toolbar.tintColor = createColor()
+        toolbar.items = [
+            UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil),
+            UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: #selector(resignKeyboard)),
+        ]
+        toolbar.sizeToFit()
+        self.inputAccessoryView = toolbar
+    }
+    
+    func resignKeyboard() {
+        self.resignFirstResponder()
+    }
+}

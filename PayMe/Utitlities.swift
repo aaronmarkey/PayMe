@@ -69,7 +69,7 @@ func calculateResults(_ payRate: Float, otRate: Float, hoursWorked: Int, taxRate
     //calculate net pay
     let net = gross - totalTax - other
     
-    return(otRate, otHours, gross, totalTax, net)
+    return(otPay, otHours, gross, totalTax, net)
 }
 
 
@@ -129,4 +129,9 @@ func conversionSuccessful(_ text: UITextField) {
 func conversionFailure(_ message: String, view: UIViewController, text: UITextField) {
     createAndDisplayErrorAlert(message, view: view)
     text.textColor = UIColor.red
+}
+
+func createColor(red: Float = 115, green: Float = 253, blue: Float = 174, alpha: Float = 1.0) -> UIColor {
+    return UIColor.init(red: CGFloat(red)/255, green: CGFloat(green)/255,
+                        blue: CGFloat(blue)/255, alpha: CGFloat(alpha))
 }
